@@ -20,7 +20,7 @@ pr:
       - doc/**/*
 
 variables:
-  v.prefix: '1.2.2'
+  v.prefix: '1.2.3'
   vmImage: 'ubuntu-latest'
 
 stages:
@@ -92,7 +92,7 @@ stages:
             displayName: nuget.org
             inputs:
               command: push
-              packagesToPush: '$(System.ArtifactsDirectory)/nuget/*.nupkg'
+              packagesToPush: '$(System.ArtifactsDirectory)/nuget/*.snupkg'
               nuGetFeedType: external
               publishFeedCredentials: 'nuget.org (aloneguid)'
           - task: GitHubRelease@1
